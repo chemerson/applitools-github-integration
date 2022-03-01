@@ -1,7 +1,7 @@
 
 const urlList = [
-   // 'https://www.wikipedia.com/',
-   // 'https://www.wikinews.org/',
+    'https://www.wikipedia.com/',
+    'https://www.wikinews.org/',
     'https://www.wikiquote.org/'
 ]
 
