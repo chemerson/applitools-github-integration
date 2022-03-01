@@ -14,7 +14,7 @@ module.exports = {
     apiKey: process.env.APPLITOOLS_API_KEY,
     appName: orgName + ' UFG app',
     testName: orgName + ' UFG',
-    log: true,
+    log: false,
     envName: orgName + ' test environment',
     branchName: 'Demo 993',
     jsLayoutBreakpoints: true,
