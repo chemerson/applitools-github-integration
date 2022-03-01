@@ -81,6 +81,17 @@ const perf = require("execution-time")();
         .addBrowser(bp, 800, BrowserType.SAFARI);
     });
 
+
+    // dump vars for debugging
+    Object.keys(configuration).forEach(key => {
+      console.log("key: ", key);
+        console.log("Value: ", configuration[key]);
+    } );
+
+    console.log('APPLITOOLS_BRANCH: ' + process.env.APPLITOOLS_BRANCH)
+    console.log('APPLITOOLS_PARENT_BRANCH: ' + process.env.APPLITOOLS_PARENT_BRANCH)
+    console.log('APPLITOOLS_BATCH_ID: ' + process.env.APPLITOOLS_BATCH_ID)
+
     const eyes = new Eyes(new VisualGridRunner(100));
     eyes.setConfiguration(configuration);
 
