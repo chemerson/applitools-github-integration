@@ -1,10 +1,10 @@
-name: Process Pull Requesst
+name: Process Pull Request
 
 on: 
    # schedule:
    #     - cron:  '*/15 * * * *'   
-   # pull_request:
-   #  types: [opened, reopened]
+   pull_request:
+     types: [opened, reopened]
    workflow_dispatch:
    
 env:
