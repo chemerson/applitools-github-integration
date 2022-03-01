@@ -32,14 +32,14 @@ const perf = require("execution-time")();
     var eyesConfig = {
       vx: config.localViewportX,
       vy: config.localViewportY,
-      batchName: config.batchName,
-      batchId: "urlmonitor" + startTime,
+      //batchName: config.batchName,
+      //batchId: "urlmonitor" + startTime,
       apiKey: config.apiKey ? config.apiKey : process.env.APPLITOOLS_API_KEY,
       appName: config.appName,
       testName: config.testName,
       log: config.log,
       envName: config.envName,
-      branchName: config.branchName,
+      //branchName: config.branchName,
       matchLevel: MatchLevel.Strict,
       jsLayoutBreakpoints: config.jsLayoutBreakpoints
         ? config.jsLayoutBreakpoints
@@ -54,14 +54,14 @@ const perf = require("execution-time")();
     configuration
 
       .setApiKey(eyesConfig.apiKey)
-      .setBatch(batchInfo)
+      //.setBatch(batchInfo)
       .setConcurrentSessions(5)
       .setAppName(eyesConfig.appName)
       .setTestName(eyesConfig.testName)
       .setMatchLevel(eyesConfig.matchLevel)
       .setSaveFailedTests(eyesConfig.saveFailedTests)
-      .setBranchName(eyesConfig.branchName)
-      .setBaselineBranchName(eyesConfig.branchName)
+      //.setBranchName(eyesConfig.branchName)
+      //.setBaselineBranchName(eyesConfig.branchName)
       .setHideScrollbars(true)
       .setSendDom(true)
       .setViewportSize({
