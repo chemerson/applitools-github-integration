@@ -24,9 +24,15 @@ jobs:
           with:
             node-version: '16'
         - uses: browser-actions/setup-chrome@latest
-        # running headless now - xvfb-run npm run test with more work to do headed
         - run: npm install
+        
+      # < to run headed>
+      #  - run: |
+      #     export DISPLAY=:99
+      #     chromedrive & sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & npm test
+        
         - run: npm test
+        
           env:
             APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY_DEMO_1 }}
             APPLITOOLS_BATCH_ID: ${{ github.sha }}
