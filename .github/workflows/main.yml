@@ -11,8 +11,8 @@ env:
   APPLITOOLS_BATCH_ID: ${{ github.sha }}
   APPLITOOLS_BATCH_NAME: Run ${{ github.run_number }} ${{ github.ref_name }}
   APPLITOOLS_SERVER_URL : "https://eyesapi.applitools.com"
-  APPLITOOLS_BASELINE_BRANCH: ${{ github.repository }}/main
-  APPLITOOLS_BRANCH: ${{ github.repository }}/main
+  APPLITOOLS_BASELINE_BRANCH: ${{ github.repository }}/${{ github.ref_name }}
+  APPLITOOLS_BRANCH: ${{ github.repository }}/${{ github.ref_name }}
 
 jobs:
     run-monitor-job:
