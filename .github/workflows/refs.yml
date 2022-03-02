@@ -1,0 +1,15 @@
+name: see refs
+
+on: 
+   # schedule:
+   #     - cron:  '*/15 * * * *'   
+   # push:
+   pull_request:
+     types: [opened, reopened]
+   workflow_dispatch:
+
+jobs:
+    get-refs-job:
+       steps:
+         - name: Various GitHub ref values
+         - run: consol.log('github.ref_name: ' + ${{ github.ref_name }})
