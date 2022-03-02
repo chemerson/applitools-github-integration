@@ -3,7 +3,7 @@ name: Run Applitools
 on: 
    # schedule:
    #     - cron:  '*/15 * * * *'   
-   push:
+   # push:
    pull_request:
      types: [opened, reopened]
    workflow_dispatch:
