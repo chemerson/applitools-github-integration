@@ -70,27 +70,27 @@ const perf = require("execution-time")();
       })
       .setLayoutBreakpoints(eyesConfig.jsLayoutBreakpoints)
       .setDisableBrowserFetching(config.disableBrowserFetching)
-      .setWaitBeforeScreenshots(1000)
-      .setWaitBeforeCapture(2000);
+      .setWaitBeforeScreenshots(250)
+      .setWaitBeforeCapture(250);
 
     const bps = config.breakPoints;
     bps.forEach((bp) => {
       configuration
         .addBrowser(bp, 800, BrowserType.CHROME)
-        .addBrowser(bp, 800, BrowserType.FIREFOX)
-        .addBrowser(bp, 800, BrowserType.SAFARI);
+       // .addBrowser(bp, 800, BrowserType.FIREFOX)
+       // .addBrowser(bp, 800, BrowserType.SAFARI);
     });
 
-
     // dump vars for debugging
+    console.log('========================')
     Object.keys(configuration).forEach(key => {
       console.log("key: ", key);
         console.log("Value: ", configuration[key]);
     } );
-
     console.log('APPLITOOLS_BRANCH: ' + process.env.APPLITOOLS_BRANCH)
     console.log('APPLITOOLS_PARENT_BRANCH: ' + process.env.APPLITOOLS_PARENT_BRANCH)
     console.log('APPLITOOLS_BATCH_ID: ' + process.env.APPLITOOLS_BATCH_ID)
+    console.log('========================')
 
     const eyes = new Eyes(new VisualGridRunner(100));
     eyes.setConfiguration(configuration);
@@ -128,7 +128,7 @@ const perf = require("execution-time")();
 
       await loadLib.lazyLoadPage(driver);
 
-      await evalChange(driver, 1);
+      await evalChange(driver, config.change);
 
       try {
         await eyes.open(driver, config.appName, urls[i - 1].toString());
