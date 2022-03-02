@@ -90,6 +90,8 @@ const perf = require("execution-time")();
     console.log('APPLITOOLS_BRANCH_: ' + process.env.APPLITOOLS_BRANCH)
     console.log('APPLITOOLS_PARENT_BRANCH: ' + process.env.APPLITOOLS_PARENT_BRANCH)
     console.log('APPLITOOLS_BATCH_ID: ' + process.env.APPLITOOLS_BATCH_ID)
+    console.log('APPLITOOLS_BRANCH_NAME: ' + process.env.APPLITOOLS_BRANCH_NAME)
+    console.log('APPLITOOLS_PARENT_BRANCH_NAME: ' + process.env.APPLITOOLS_PARENT_BRANCH_NAME)
     console.log('========================')
 
     const eyes = new Eyes(new VisualGridRunner(100));
