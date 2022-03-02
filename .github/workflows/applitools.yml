@@ -25,7 +25,7 @@ jobs:
         - name: Notify Applitools
           uses: wei/curl@v1
           with:
-           args: -L -d -v '' -X POST "$APPLITOOLS_SERVER_URL/api/externals/github/push?apiKey=$${{secrets.APPLITOOLS_API_KEY_DEMO_1}}&CommitSha=${{github.sha}}&BranchName=$APPLITOOLS_BRANCH&ParentBranchName=$APPLITOOLS_PARENT_BRANCH"
+           args: -L -d -v '' -X POST "https://eyesapi.applitools.com/api/externals/github/push?apiKey=$${{secrets.APPLITOOLS_API_KEY_DEMO_1}}&CommitSha=${{github.sha}}&BranchName=${{ github.ref_name }}&ParentBranchName=${{ github.base_ref }}"
         
         - uses: actions/checkout@v2
           with:
