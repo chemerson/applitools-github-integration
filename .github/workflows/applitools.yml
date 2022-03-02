@@ -11,7 +11,7 @@ on:
 env:
   APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY_DEMO_1 }}
   APPLITOOLS_BATCH_ID: ${{ github.sha }}
-  APPLITOOLS_BATCH_NAME: ${{ github.workflow }} ${{ github.event_name }}:#${{ github.run_number }}
+  APPLITOOLS_BATCH_NAME: Run \#${{ github.run_number }} ${{ github.head_ref }} ${{ github.base_ref }}
   APPLITOOLS_SERVER_URL : "https://eyesapi.applitools.com"
   APPLITOOLS_BRANCH: ${{ github.head_ref }}
   APPLITOOLS_PARENT_BRANCH: ${{ github.base_ref }}
