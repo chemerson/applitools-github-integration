@@ -1,8 +1,8 @@
 
 const urlList = [
     'https://www.wikipedia.com/',
-    'https://www.wikipedia.com123/',
-    'https://www.wikiquot.org/'
+    'https://www.wikipedia.com/',
+    'https://www.wikiquo.org/'
 ]
 
 const breakPoints = [1080, 896, 640, 530]
