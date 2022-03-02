@@ -1,4 +1,4 @@
-name: Process Pull Request
+name: Process Pull Request (Main)
 
 on: 
    # schedule:
@@ -13,13 +13,13 @@ env:
   APPLITOOLS_BATCH_ID: ${{ github.sha }}
   APPLITOOLS_BATCH_NAME: ${{ github.workflow }}:#${{ github.run_number }}
   APPLITOOLS_SERVER_URL : "https://eyesapi.applitools.com"
-  APPLITOOLS_BRANCH: ${{ github.ref }}
+  APPLITOOLS_BRANCH: ${{ github.ref_name }}
   APPLITOOLS_PARENT_BRANCH: ${{ github.base_ref }}
 
 jobs:
     run-monitor-job:
       runs-on: ubuntu-latest
-      name: Master-applitools-github-integration
+      name: applitools-github-integration
 
       steps:
         - if: ${{ github.event.pull_request }}
