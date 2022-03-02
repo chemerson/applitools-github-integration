@@ -4,7 +4,7 @@ const urlList = [
     'https://commons.wikimedia.org/wiki/Main_Page',
 ]
 
-const breakPoints = [1080, 896, 640, 530]
+const breakPoints = [1080]
 
 const orgName = 'Wikipedia'
 
