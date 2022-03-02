@@ -15,6 +15,16 @@ env:
   APPLITOOLS_SERVER_URL : "https://eyesapi.applitools.com"
   APPLITOOLS_BRANCH: ${{ github.head_ref }}
   APPLITOOLS_PARENT_BRANCH: ${{ github.base_ref }}
+  ACTION_REPOSITORY: ${{ github.action_repository }}
+  ACTION_REF: ${{ github.action_ref }}
+  BASE_REF: ${{ github.base_ref }}
+  HEAD_REF: ${{ github.head_ref }}
+  BASE_REF: ${{ github.base_ref }}
+  REF: ${{ github.ref }}
+  REF_NAME: ${{ github.ref_name }}
+  RUN_ID: ${{ github.run_id }}
+
+
 
 jobs:
     run-monitor-job:
