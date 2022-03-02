@@ -1,4 +1,4 @@
-name: Run Applitools
+name: Run Applitools 
 
 on: 
    # schedule:
