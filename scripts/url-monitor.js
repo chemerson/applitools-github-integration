@@ -87,7 +87,7 @@ const perf = require("execution-time")();
       console.log("key: ", key);
         console.log("Value: ", configuration[key]);
     } );
-    console.log('APPLITOOLS_BRANCH: ' + process.env.APPLITOOLS_BRANCH)
+    console.log('APPLITOOLS_BRANCH_: ' + process.env.APPLITOOLS_BRANCH)
     console.log('APPLITOOLS_PARENT_BRANCH: ' + process.env.APPLITOOLS_PARENT_BRANCH)
     console.log('APPLITOOLS_BATCH_ID: ' + process.env.APPLITOOLS_BATCH_ID)
     console.log('========================')
