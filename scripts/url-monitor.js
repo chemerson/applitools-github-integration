@@ -128,7 +128,7 @@ const perf = require("execution-time")();
 
       await loadLib.lazyLoadPage(driver);
 
-      await evalChange(driver, 0);
+      await evalChange(driver, 1);
 
       try {
         await eyes.open(driver, config.appName, urls[i - 1].toString());

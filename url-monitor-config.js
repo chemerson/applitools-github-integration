@@ -1,6 +1,7 @@
 
 const urlList = [
-    'https://www.wikipedia.com/'
+    'https://www.wikipedia.com/',
+    'https://commons.wikimedia.org/wiki/Main_Page',
 ]
 
 const breakPoints = [1080, 896, 640, 530]
@@ -14,7 +15,7 @@ module.exports = {
     testName: orgName + ' UFG',
     log: false,
     envName: orgName + ' test environment',
-    branchName: 'Demo 993',
+    branchName: 'in add-url test 3',
     jsLayoutBreakpoints: true,
     saveFailedTests: false,
     urls: urlList,
