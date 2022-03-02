@@ -16,7 +16,7 @@ module.exports = {
     testName: orgName + ' UFG',
     log: false,
     envName: orgName + ' test environment',
-    branchName: 'Demo 993',
+    branchName: 'Demo 993 x',
     jsLayoutBreakpoints: true,
     saveFailedTests: false,
     urls: urlList,
