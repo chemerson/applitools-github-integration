@@ -3,6 +3,7 @@ name: Process Pull Request
 on: 
    # schedule:
    #     - cron:  '*/15 * * * *'   
+   push:
    pull_request:
      types: [opened, reopened]
    workflow_dispatch:
