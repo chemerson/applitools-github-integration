@@ -54,7 +54,7 @@ const perf = require("execution-time")();
     configuration
 
       .setApiKey(eyesConfig.apiKey)
-      //.setBatch(batchInfo)
+      .setBatch(batchInfo)
       .setConcurrentSessions(5)
       .setAppName(eyesConfig.appName)
       .setTestName(eyesConfig.testName)
@@ -70,15 +70,15 @@ const perf = require("execution-time")();
       })
       .setLayoutBreakpoints(eyesConfig.jsLayoutBreakpoints)
       .setDisableBrowserFetching(config.disableBrowserFetching)
-      .setWaitBeforeScreenshots(250)
-      .setWaitBeforeCapture(250);
+      .setWaitBeforeScreenshots(10000)
+      .setWaitBeforeCapture(1);
 
     const bps = config.breakPoints;
     bps.forEach((bp) => {
       configuration
         .addBrowser(bp, 800, BrowserType.CHROME)
-       // .addBrowser(bp, 800, BrowserType.FIREFOX)
-       // .addBrowser(bp, 800, BrowserType.SAFARI);
+        .addBrowser(bp, 800, BrowserType.FIREFOX)
+        .addBrowser(bp, 800, BrowserType.SAFARI);
     });
 
     // dump vars for debugging
@@ -109,9 +109,9 @@ const perf = require("execution-time")();
     };
     // Run headed with xvfb added to CI workflow
     var driver = new Builder()
-      //.forBrowser('chrome')
-      .setChromeOptions(new chrome.Options().headless().windowSize(screen))
-      .withCapabilities({ browserName: "chrome", headless: true })
+      .forBrowser('chrome')
+      //.setChromeOptions(new chrome.Options().headless().windowSize(screen))
+      //.withCapabilities({ browserName: "chrome", headless: true })
       .build();
 
     const urls = config.urls;
@@ -133,7 +133,7 @@ const perf = require("execution-time")();
       await evalChange(driver, config.change);
 
       try {
-        await eyes.open(driver, config.appName, urls[i - 1].toString());
+        await eyes.open(driver) //, config.appName, urls[i - 1].toString());
         await eyes.check(urls[i - 1].toString(), Target.window().fully());
         await eyes.close(false);
       } catch (err) {
