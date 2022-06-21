@@ -2,13 +2,9 @@
 
 const loadLib = require("./lib/lazy-load");
 const resLib = require("./lib/display-results");
-
 const config = require("../url-monitor-config");
 var fs = require("fs");
-
 const webdriver = require("selenium-webdriver");
-//require("chromedriver");
-//const Builder = require("selenium-webdriver");
 const {
   Eyes,
   VisualGridRunner,
@@ -108,15 +104,11 @@ const perf = require("execution-time")();
       height: 600,
     };
     // Run headed with xvfb added to CI workflow
-    //var driver = new Builder()
-     // .forBrowser('chrome')
-      //.setChromeOptions(new chrome.Options().headless().windowSize(screen))
-      //.withCapabilities({ browserName: "chrome", headless: true })
-     // .build();
-
     var chromeCapabilities = webdriver.Capabilities.chrome();
     var chromeOptions = {
-        'args': ['--disable-dev-shm-usage']
+        'args': [ '--disable-dev-shm-usage',
+                  '--no-sandbox'
+      ]
     };
     chromeCapabilities.set('chromeOptions', chromeOptions);
     var driver = new webdriver.Builder().withCapabilities(chromeCapabilities).build();
