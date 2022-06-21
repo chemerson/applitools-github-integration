@@ -114,7 +114,7 @@ const perf = require("execution-time")();
       //.withCapabilities({ browserName: "chrome", headless: true })
      // .build();
 
-    var chromeCapabilities = webdriver.Capabilities.chrome();
+    var chromeCapabilities = new Capabilities.chrome();
     var chromeOptions = {
         'args': ['--disable-dev-shm-usage']
     };
