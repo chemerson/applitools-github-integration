@@ -119,7 +119,7 @@ const perf = require("execution-time")();
         'args': ['--disable-dev-shm-usage']
     };
     chromeCapabilities.set('chromeOptions', chromeOptions);
-    var driver = new webdriver.Builder().withCapabilities(chromeCapabilities).build();
+    var driver = new Builder().withCapabilities(chromeCapabilities).build();
 
     const urls = config.urls;
     var i;
