@@ -108,12 +108,18 @@ const perf = require("execution-time")();
       height: 600,
     };
     // Run headed with xvfb added to CI workflow
-    var driver = new Builder()
-      .forBrowser('chrome')
-
+    //var driver = new Builder()
+     // .forBrowser('chrome')
       //.setChromeOptions(new chrome.Options().headless().windowSize(screen))
       //.withCapabilities({ browserName: "chrome", headless: true })
-      .build();
+     // .build();
+
+    var chromeCapabilities = webdriver.Capabilities.chrome();
+    var chromeOptions = {
+        'args': ['--disable-dev-shm-usage']
+    };
+    chromeCapabilities.set('chromeOptions', chromeOptions);
+    var driver = new webdriver.Builder().withCapabilities(chromeCapabilities).build();
 
     const urls = config.urls;
     var i;
