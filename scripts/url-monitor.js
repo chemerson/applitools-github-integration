@@ -107,7 +107,8 @@ const perf = require("execution-time")();
     var chromeCapabilities = webdriver.Capabilities.chrome();
     var chromeOptions = {
         'args': [ '--disable-dev-shm-usage',
-                  '--no-sandbox'
+                  '--no-sandbox',
+                  '--single-process'
       ]
     };
     chromeCapabilities.set('chromeOptions', chromeOptions);
