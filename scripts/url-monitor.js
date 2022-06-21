@@ -6,9 +6,9 @@ const resLib = require("./lib/display-results");
 const config = require("../url-monitor-config");
 var fs = require("fs");
 
-const chrome = require("selenium-webdriver/chrome");
-require("chromedriver");
-const { Builder } = require("selenium-webdriver");
+const webdriver = require("selenium-webdriver");
+//require("chromedriver");
+//const Builder = require("selenium-webdriver");
 const {
   Eyes,
   VisualGridRunner,
@@ -114,12 +114,12 @@ const perf = require("execution-time")();
       //.withCapabilities({ browserName: "chrome", headless: true })
      // .build();
 
-    var chromeCapabilities = chrome.Capabilities.chrome();
+    var chromeCapabilities = webdriver.Capabilities.chrome();
     var chromeOptions = {
         'args': ['--disable-dev-shm-usage']
     };
     chromeCapabilities.set('chromeOptions', chromeOptions);
-    var driver = new chrome.Builder().withCapabilities(chromeCapabilities).build();
+    var driver = new webdriver.Builder().withCapabilities(chromeCapabilities).build();
 
     const urls = config.urls;
     var i;
