@@ -114,12 +114,12 @@ const perf = require("execution-time")();
       //.withCapabilities({ browserName: "chrome", headless: true })
      // .build();
 
-    var chromeCapabilities = new Capabilities.chrome();
+    var chromeCapabilities = chrome.Capabilities.chrome();
     var chromeOptions = {
         'args': ['--disable-dev-shm-usage']
     };
     chromeCapabilities.set('chromeOptions', chromeOptions);
-    var driver = new Builder().withCapabilities(chromeCapabilities).build();
+    var driver = new chrome.Builder().withCapabilities(chromeCapabilities).build();
 
     const urls = config.urls;
     var i;
