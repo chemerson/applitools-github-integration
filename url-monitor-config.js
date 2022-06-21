@@ -1,8 +1,8 @@
 
 const urlList = [
-    'https://bit.ly/3ISU2v2',
-   //  'https://www.wikipedia.com/',
-   // 'https://commons.wikimedia.org/wiki/Main_Page',
+
+    'https://www.wikipedia.com/',
+    'https://commons.wikimedia.org/wiki/Main_Page'
 ]
 
 const breakPoints = [1080]
@@ -10,7 +10,7 @@ const breakPoints = [1080]
 const orgName = 'Wikipedia'
 
 module.exports = {
-    change: 1,
+    change: 3,
     batchName: orgName + ' URLs',
     apiKey: process.env.APPLITOOLS_API_KEY,
     appName: orgName + ' UFG app',
