@@ -7,6 +7,7 @@ const config = require("../url-monitor-config");
 var fs = require("fs");
 
 const chrome = require("selenium-webdriver/chrome");
+const chrome_options = require("selenium-webdriver/chrome.Options");
 require("chromedriver");
 const { Builder } = require("selenium-webdriver");
 const {
@@ -108,8 +109,12 @@ const perf = require("execution-time")();
       height: 600,
     };
     // Run headed with xvfb added to CI workflow
+    chrome_options = Options()
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-dev-shm-usage')
     var driver = new Builder()
       .forBrowser('chrome')
+
       //.setChromeOptions(new chrome.Options().headless().windowSize(screen))
       //.withCapabilities({ browserName: "chrome", headless: true })
       .build();
