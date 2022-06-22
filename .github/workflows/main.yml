@@ -28,7 +28,9 @@ jobs:
         - uses: actions/setup-node@v2
           with:
             node-version: '16'
-        - uses: browser-actions/setup-chrome@996506
+        - uses: browser-actions/setup-chrome@latest
+          with:
+            chrome-version: stable
         
         - run: npm install
         
