@@ -4,6 +4,7 @@ const loadLib = require("./lib/lazy-load");
 const resLib = require("./lib/display-results");
 const config = require("../url-monitor-config");
 var fs = require("fs");
+const { Builder, By } = require('selenium-webdriver');
 const chrome = require("selenium-webdriver/chrome");
 const {
   Eyes,
