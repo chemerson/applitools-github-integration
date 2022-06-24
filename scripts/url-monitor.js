@@ -4,7 +4,7 @@ const loadLib = require("./lib/lazy-load");
 const resLib = require("./lib/display-results");
 const config = require("../url-monitor-config");
 var fs = require("fs");
-const webdriver = require("selenium-webdriver/chrome");
+const chrome = require("selenium-webdriver/chrome");
 const {
   Eyes,
   VisualGridRunner,
@@ -104,6 +104,7 @@ const perf = require("execution-time")();
       height: 600,
     };
     // Run headed with xvfb added to CI workflow
+    /*
     var chromeCapabilities = webdriver.Capabilities.chrome();
     var chromeOptions = {
         'args': [ '--disable-dev-shm-usage',
@@ -114,6 +115,16 @@ const perf = require("execution-time")();
     };
     chromeCapabilities.set('chromeOptions', chromeOptions);
     var driver = new webdriver.Builder().withCapabilities(chromeCapabilities).build();
+    */
+    
+    // Use Chrome browser
+    const options = new chrome.Options();
+    if (process.env.CI === 'true') options.headless();
+
+    driver = await new Builder()
+      .forBrowser('chrome')
+      .setChromeOptions(options)
+      .build();
 
     const urls = config.urls;
     var i;
