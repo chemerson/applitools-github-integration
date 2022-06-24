@@ -122,7 +122,7 @@ const perf = require("execution-time")();
     const options = new chrome.Options();
     if (process.env.CI === 'true') options.headless();
 
-    driver = await new Builder()
+    const driver = await new Builder()
       .forBrowser('chrome')
       .setChromeOptions(options)
       .build();
