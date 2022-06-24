@@ -33,13 +33,6 @@ jobs:
           uses: actions/setup-node@v1
           with:
             node-version: ${{ matrix.node-version }}
-          
-        # - uses: actions/setup-node@v2
-        #  with:
-        #    node-version: '16'
-        # - uses: browser-actions/setup-chrome@latest
-        #  with:
-        #    chrome-version: stable
         
         - run: npm ci
         - run: npm install chromedriver --detect_chromedriver_version --no-save
