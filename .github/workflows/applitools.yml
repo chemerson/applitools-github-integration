@@ -38,7 +38,6 @@ jobs:
           uses: wei/curl@v1
           with:
            args: -L -d -v '' -X POST "${{env.APPLITOOLS_SERVER_URL}}/api/externals/github/push?apiKey=$${{secrets.APPLITOOLS_API_KEY_DEMO_1}}&CommitSha=${{ env.APPLITOOLS_BATCH_ID }}&BranchName=${{ env.APPLITOOLS_BRANCH }}&ParentBranchName=${{ env.APPLITOOLS_PARENT_BRANCH }}"
-           # args: -d \"\" -X POST "${{ env.APPLITOOLS_SERVER_URL }}/api/Externals/github/servers/github.com/commit/${{ env.APPLITOOLS_BATCH_ID }}/complete?apiKey=${{ env.APPLITOOLS_API_KEY }}"
 
         - uses: actions/checkout@v2
           with:
