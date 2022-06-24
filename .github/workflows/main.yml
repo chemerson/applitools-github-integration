@@ -3,7 +3,7 @@ name: Run Applitools non-PR
 on: 
    # schedule:
    #     - cron:  '*/15 * * * *'   
-   push:
+   # push:
    workflow_dispatch:
    
 env:
