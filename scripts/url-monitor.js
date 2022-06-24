@@ -108,7 +108,8 @@ const perf = require("execution-time")();
     var chromeOptions = {
         'args': [ '--disable-dev-shm-usage',
                   '--no-sandbox',
-                  '--single-process'
+                  '--single-process',
+                  '--disable-gpu'
       ]
     };
     chromeCapabilities.set('chromeOptions', chromeOptions);
