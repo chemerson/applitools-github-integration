@@ -4,7 +4,7 @@ const loadLib = require("./lib/lazy-load");
 const resLib = require("./lib/display-results");
 const config = require("../url-monitor-config");
 var fs = require("fs");
-const webdriver = require("selenium-webdriver");
+const webdriver = require("selenium-webdriver/chrome");
 const {
   Eyes,
   VisualGridRunner,
