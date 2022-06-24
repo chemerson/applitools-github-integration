@@ -19,15 +19,24 @@ jobs:
     run-monitor-job:
       runs-on: ubuntu-latest
       name: applitools-github-integration
+      
+      strategy:
+        matrix:
+          node-version: [16.x]
 
       steps:
         - uses: actions/checkout@v2
           with:
             ref: ${{ github.ref }}
         
-        - uses: actions/setup-node@v2
+        - name: Use Node.js ${{ matrix.node-version }}
+          uses: actions/setup-node@v1
           with:
-            node-version: '16'
+            node-version: ${{ matrix.node-version }}
+          
+        # - uses: actions/setup-node@v2
+        #  with:
+        #    node-version: '16'
         # - uses: browser-actions/setup-chrome@latest
         #  with:
         #    chrome-version: stable
