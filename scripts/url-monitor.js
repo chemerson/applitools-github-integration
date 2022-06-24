@@ -133,7 +133,7 @@ const perf = require("execution-time")();
       await evalChange(driver, config.change);
 
       try {
-        await eyes.open(driver) //, config.appName, urls[i - 1].toString());
+        await eyes.open(driver, config.appName, urls[i - 1].toString());
         await eyes.check(urls[i - 1].toString(), Target.window().fully());
         await eyes.close(false);
       } catch (err) {
