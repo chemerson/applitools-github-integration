@@ -104,19 +104,6 @@ const perf = require("execution-time")();
       width: 1080,
       height: 600,
     };
-    // Run headed with xvfb added to CI workflow
-    /*
-    var chromeCapabilities = webdriver.Capabilities.chrome();
-    var chromeOptions = {
-        'args': [ '--disable-dev-shm-usage',
-                  '--no-sandbox',
-                  '--single-process',
-                  '--disable-gpu'
-      ]
-    };
-    chromeCapabilities.set('chromeOptions', chromeOptions);
-    var driver = new webdriver.Builder().withCapabilities(chromeCapabilities).build();
-    */
     
     // Use Chrome browser
     const options = new chrome.Options();
