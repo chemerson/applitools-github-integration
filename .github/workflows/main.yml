@@ -5,7 +5,7 @@ on:
    #     - cron:  '*/15 * * * *'   
    push:
      branches:    
-       - ${{ github.ref_name }}
+       - ${{ github.ref }}
    # pull_request:
    #  types: [edited, opened, reopened]
    workflow_dispatch:
