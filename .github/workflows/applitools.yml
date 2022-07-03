@@ -43,7 +43,8 @@ jobs:
         - name: Notify Applitools
           uses: wei/curl@v1
           with:
-            args: -L -d -v '' -X POST "${{env.APPLITOOLS_SERVER_URL}}/api/externals/github/push?apiKey=$${{secrets.APPLITOOLS_API_KEY_DEMO_1}}&CommitSha=${{ env.APPLITOOLS_BATCH_ID }}&BranchName=${{ env.APPLITOOLS_BRANCH }}&ParentBranchName=${{ env.APPLITOOLS_PARENT_BRANCH }}"
+          # curl -X POST "https://eyes.applitools.com/api/Externals/github/push?AccountId=string&CommitSha=string&BranchName=string&ParentBranchName=string&ServerUrl=string" -H  "accept: */*" -d ""
+            args: -L -d -v '' -X POST "${{env.APPLITOOLS_SERVER_URL}}/api/externals/github/push?apiKey=$${{secrets.APPLITOOLS_API_KEY_DEMO_1}}&CommitSha=${{ env.APPLITOOLS_BATCH_ID }}&BranchName=${{ env.APPLITOOLS_BRANCH }}"
 
         - uses: actions/checkout@v2
           with:
