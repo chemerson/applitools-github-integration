@@ -1,11 +1,11 @@
-name: Run Applitools 
+name: Run Applitools PR
 
 on: 
    # schedule:
    #     - cron:  '*/15 * * * *'   
    # push:
-   # pull_request:
-   #  types: [edited, opened, reopened]
+     pull_request:
+      types: [edited, opened, reopened]
    # workflow_dispatch:
    
 env:
@@ -46,8 +46,6 @@ jobs:
         - name: Notify Applitools
           uses: wei/curl@v1
           with:
-          # curl -X POST "https://eyes.applitools.com/api/Externals/github/push?AccountId=string&CommitSha=string&BranchName=string&ParentBranchName=string&ServerUrl=string" -H  "accept: */*" -d ""
-          #  args: -L -d -v '' -X POST "${{env.APPLITOOLS_SERVER_URL}}/api/externals/github/push?apiKey=$${{secrets.APPLITOOLS_API_KEY_DEMO_1}}&CommitSha=${{ env.APPLITOOLS_BATCH_ID }}&BranchName=${{ env.APPLITOOLS_BRANCH }}"
             args: -L -d -v '' -X POST "${{env.APPLITOOLS_SERVER_URL}}/api/Externals/github/push?apiKey=$${{secrets.APPLITOOLS_API_KEY_DEMO_1}}&CommitSha=${{ env.APPLITOOLS_BATCH_ID }}&BranchName=${{ env.APPLITOOLS_BRANCH }}"
 
         - uses: actions/checkout@v2
