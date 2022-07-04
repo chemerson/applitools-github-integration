@@ -58,7 +58,7 @@ const perf = require("execution-time")();
       .setMatchLevel(eyesConfig.matchLevel)
       .setSaveFailedTests(eyesConfig.saveFailedTests)
       //.setBranchName(eyesConfig.branchName)
-      //.setBaselineBranchName(eyesConfig.branchName)
+      .setBaselineBranchName(eyesConfig.branchName)
       .setHideScrollbars(true)
       .setSendDom(true)
       .setViewportSize({
