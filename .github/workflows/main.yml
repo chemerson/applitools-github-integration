@@ -19,7 +19,7 @@ env:
   APPLITOOLS_SERVER_URL : "https://eyesapi.applitools.com"
   # APPLITOOLS_BRANCH: ${{ github.repository }}/${{ github.head_ref }}
   APPLITOOLS_BRANCH: ${{ github.repository }}/${{ github.ref_name }}
-  APPLITOOLS_PARENT_BRANCH: ${{ github.repository }}/${{ github.base_ref }}
+  # APPLITOOLS_PARENT_BRANCH: ${{ github.repository }}/${{ github.base_ref }}
   REPOSITORY: ${{ github.repository }}
   ACTION_REF: ${{ github.action_ref }}
   BASE_REF: ${{ github.base_ref }}
