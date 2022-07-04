@@ -19,7 +19,7 @@ env:
   APPLITOOLS_SERVER_URL : "https://eyesapi.applitools.com"
   # APPLITOOLS_BRANCH: ${{ github.repository }}/${{ github.head_ref }}
   APPLITOOLS_BRANCH: ${{ github.repository }}/${{ github.ref_name }}
-  # APPLITOOLS_PARENT_BRANCH: ${{ github.repository }}/${{ github.base_ref }}
+  APPLITOOLS_PARENT_BRANCH: ${{ github.repository }}/${{ github.base_ref }}
   REPOSITORY: ${{ github.repository }}
   ACTION_REF: ${{ github.action_ref }}
   BASE_REF: ${{ github.base_ref }}
@@ -42,11 +42,10 @@ jobs:
           node-version: [16.x]
 
       steps:
-        # - name: Notify Applitools
-        #  uses: wei/curl@v1
-        #  with:
-        #    args: -L -d -v '' -X POST "${{env.APPLITOOLS_SERVER_URL}}/api/externals/github/push?apiKey=$${{secrets.APPLITOOLS_API_KEY_DEMO_1}}&CommitSha=${{ env.APPLITOOLS_BATCH_ID }}&BranchName=${{ env.APPLITOOLS_BRANCH }}"
-            # args: -L -d -v '' -X POST "${{env.APPLITOOLS_SERVER_URL}}/api/externals/github/push?apiKey=$${{secrets.APPLITOOLS_API_KEY_DEMO_1}}&CommitSha=${{ env.APPLITOOLS_BATCH_ID }}&BranchName=${{ env.APPLITOOLS_BRANCH }}&ParentBranchName=${{ env.APPLITOOLS_PARENT_BRANCH }}"
+        - name: Notify Applitools
+          uses: wei/curl@v1
+          with:
+            args: -L -d -v '' -X POST "${{env.APPLITOOLS_SERVER_URL}}/api/Externals/github/push?apiKey=$${{secrets.APPLITOOLS_API_KEY_DEMO_1}}&CommitSha=${{ env.APPLITOOLS_BATCH_ID }}&BranchName=${{ env.APPLITOOLS_BRANCH }}"
 
         - uses: actions/checkout@v2
           with:
