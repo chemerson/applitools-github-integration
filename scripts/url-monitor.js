@@ -29,14 +29,14 @@ const perf = require("execution-time")();
     var eyesConfig = {
       vx: config.localViewportX,
       vy: config.localViewportY,
-      //batchName: config.batchName,
-      //batchId: "urlmonitor" + startTime,
+      batchName: process.env.APPLITOOLS_BATCH_NAME,
+      batchId: process.env.APPLITOOLS_BATCH_ID,
       apiKey: config.apiKey ? config.apiKey : process.env.APPLITOOLS_API_KEY,
       appName: config.appName,
       testName: config.testName,
       log: config.log,
       envName: config.envName,
-      //branchName: config.branchName,
+      branchName: process.env.APPLITOOLS_BRANCH,
       matchLevel: MatchLevel.Strict,
       jsLayoutBreakpoints: config.jsLayoutBreakpoints
         ? config.jsLayoutBreakpoints
