@@ -15,7 +15,7 @@ env:
   APPLITOOLS_BATCH_ID: ${{ github.event.pull_request.head.sha || github.sha }}
   
   # APPLITOOLS_BATCH_NAME: Run ${{ github.run_number }} ${{ github.ref_name }} ${{ github.head_ref }} ${{ github.base_ref }} ${{ github.event.pull_request.head.sha }}
-  APPLITOOLS_BATCH_NAME: ${{ github.head_ref }} ${{ github.sha }} ${{ github.event_name }}
+  APPLITOOLS_BATCH_NAME: ${{ github.head_ref }} ${{ github.event.pull_request.head.sha || github.sha }} ${{ github.event_name }}
   APPLITOOLS_SERVER_URL : "https://eyesapi.applitools.com"
   APPLITOOLS_BRANCH: ${{ github.repository }}/${{ github.head_ref }}
   # APPLITOOLS_BRANCH: ${{ github.repository }}/${{ github.ref_name }}
