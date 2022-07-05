@@ -11,13 +11,13 @@ const orgName = 'Wikipedia'
 
 module.exports = {
     change: 0,
-    batchName: orgName + ' URLs',
+    batchName: '',
     apiKey: process.env.APPLITOOLS_API_KEY,
     appName: orgName + ' UFG app',
-    testName: orgName + ' UFG',
+    testName: '',
     log: false,
     envName: orgName + ' test environment',
-    branchName: 'not used',
+    branchName: '',
     jsLayoutBreakpoints: true,
     saveFailedTests: false,
     urls: urlList,
