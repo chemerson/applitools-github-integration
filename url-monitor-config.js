@@ -13,7 +13,7 @@ module.exports = {
     change: 0,
     batchName: '',
     apiKey: process.env.APPLITOOLS_API_KEY,
-    appName: orgName + ' UFG app',
+    appName: orgName + ' UFG app 1',
     testName: '',
     log: false,
     envName: orgName + ' test environment',
