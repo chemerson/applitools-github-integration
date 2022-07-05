@@ -3,11 +3,11 @@ name: Run Applitools on Commit
 on: 
    # schedule:
    #     - cron:  '*/15 * * * *'   
-   # push:
-   #  branches:    
-   #    - '**'
-    pull_request:
-     types: [edited, opened, reopened]
+    push:
+     branches:    
+       - '**'
+   # pull_request:
+   #  types: [edited, opened, reopened]
     
     workflow_dispatch:
    
