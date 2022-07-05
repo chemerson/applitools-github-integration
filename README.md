@@ -1,5 +1,7 @@
 # applitools-github-integration
 
+Edit url-monitor-config.js and alter the 'change' value to cause diffs.
+
 Changers available in the applitool config file to create diffs.
 
     async function evalChange(driver, change) {
