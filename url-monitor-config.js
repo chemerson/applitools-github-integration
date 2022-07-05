@@ -10,7 +10,7 @@ const breakPoints = [1080]
 const orgName = 'Wikipedia'
 
 module.exports = {
-    change: 0,
+    change: 1,
     batchName: '',
     apiKey: process.env.APPLITOOLS_API_KEY,
     appName: orgName + ' UFG app',
