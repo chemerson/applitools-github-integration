@@ -1,4 +1,4 @@
-name: Run Applitools PR
+name: Run on PR or push
 
 on: 
    # schedule:
