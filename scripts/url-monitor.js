@@ -143,7 +143,7 @@ const perf = require("execution-time")();
     );
 
     await driver.quit();
-    const testResultsSummary = await eyes.getRunner().getAllTestResults(false);
+    const testResultsSummary = await eyes.getRunner().getAllTestResults(true);
     const resultsStr = await testResultsSummary
       .getAllResults()
       .map((testResultContainer) => {
@@ -162,7 +162,7 @@ const perf = require("execution-time")();
     console.log("ERROR: " + err.message);
     if (typeof driver !== "undefined") await (await driver).quit();
     if (typeof eyes !== "undefined")
-      results = await eyes.getRunner().getAllTestResults(false);
+      results = await eyes.getRunner().getAllTestResults(true);
   }
 })();
 
