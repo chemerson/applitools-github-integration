@@ -1,11 +1,11 @@
-name: Run on PR or push
+name: Run on Push
 
 on: 
    # schedule:
    #     - cron:  '*/15 * * * *'   
      push:
-     pull_request:
-      types: [edited, opened, reopened]
+   #  pull_request:
+   #   types: [edited, opened, reopened]
    # workflow_dispatch:
    
 env:
