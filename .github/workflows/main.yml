@@ -1,4 +1,4 @@
-name: Run Applitools on Commit
+name: Run on demand
 
 on: 
    # schedule:
